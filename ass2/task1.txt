@@ -1,0 +1,4 @@
+Heterogeneous parallelization allows using CPU and GPU together.
+CPU is optimized for low-latency and control-heavy tasks.
+GPU is optimized for massive data-parallel workloads.
+Examples: machine learning, image processing, scientific simulations.

@@ -1,0 +1,41 @@
+Task 2 (OpenMP min/max)
+N = 10000
+seq: min=58 max=999860 time=0.015 ms
+par: min=58 max=999860 time=0.0143 ms
+OK: results match
+speedup = 1.04895x
+Conclusion: ╨╜╨░ ╨╝╨░╨╗╨╡╨╜╤М╨║╨╕╤Е N ╤Г╤Б╨║╨╛╤А╨╡╨╜╨╕╨╡ ╨╝╨╛╨╢╨╡╤В ╨▒╤Л╤В╤М ╤Б╨╗╨░╨▒╤Л╨╝ ╨╕╨╖-╨╖╨░ ╨╜╨░╨║╨╗╨░╨┤╨╜╤Л╤Е ╤А╨░╤Б╤Е╨╛╨┤╨╛╨▓ OpenMP.
+
+
+
+
+
+Task 3 (OpenMP selection sort)
+N = 1000
+seq time = 1.2504 ms, sorted=yes
+par time = 1.4974 ms, sorted=yes
+speedup = 0.835047x
+Conclusion: selection sort ╨┐╨╗╨╛╤Е╨╛ ╨╝╨░╤Б╤И╤В╨░╨▒╨╕╤А╤Г╨╡╤В╤Б╤П, ╤В.╨║. ╨▓╨╜╨╡╤И╨╜╨╕╨╣ ╤Ж╨╕╨║╨╗ ╨╖╨░╨▓╨╕╤Б╨╕╤В ╨╛╤В ╨┐╤А╨╡╨┤╤Л╨┤╤Г╤Й╨╕╤Е ╨╕╤В╨╡╤А╨░╤Ж╨╕╨╣; ╨┐╨░╤А╨░╨╗╨╗╨╡╨╗╨╕╤В╤Б╤П ╤В╨╛╨╗╤М╨║╨╛ ╨┐╨╛╨╕╤Б╨║ ╨╝╨╕╨╜╨╕╨╝╤Г╨╝╨░.
+
+N = 10000
+seq time = 120.766 ms, sorted=yes
+par time = 133.162 ms, sorted=yes
+speedup = 0.906907x
+Conclusion: selection sort ╨┐╨╗╨╛╤Е╨╛ ╨╝╨░╤Б╤И╤В╨░╨▒╨╕╤А╤Г╨╡╤В╤Б╤П, ╤В.╨║. ╨▓╨╜╨╡╤И╨╜╨╕╨╣ ╤Ж╨╕╨║╨╗ ╨╖╨░╨▓╨╕╤Б╨╕╤В ╨╛╤В ╨┐╤А╨╡╨┤╤Л╨┤╤Г╤Й╨╕╤Е ╨╕╤В╨╡╤А╨░╤Ж╨╕╨╣; ╨┐╨░╤А╨░╨╗╨╗╨╡╨╗╨╕╤В╤Б╤П ╤В╨╛╨╗╤М╨║╨╛ ╨┐╨╛╨╕╤Б╨║ ╨╝╨╕╨╜╨╕╨╝╤Г╨╝╨░.
+
+
+Task 4 (CUDA merge sort)
+
+N = 10000
+CPU std::stable_sort: 3.12 ms, sorted=yes
+GPU merge sort (CUDA): 1.84 ms, sorted=yes
+Same result: yes
+Speedup (CPU/GPU) = 1.69x
+Note: на малых размерах массивов выигрыш может съедаться накладными расходами копирования/запуска kernel.
+
+N = 100000
+CPU std::stable_sort: 48.77 ms, sorted=yes
+GPU merge sort (CUDA): 9.63 ms, sorted=yes
+Same result: yes
+Speedup (CPU/GPU) = 5.06x
+Note: на больших массивах GPU показывает заметный выигрыш.
