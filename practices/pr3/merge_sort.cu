@@ -174,6 +174,21 @@ static bool is_sorted_non_decreasing(const std::vector<int>& a) {
 }
 
 int main() {
+    int deviceCount = 0;
+    cudaError_t error = cudaGetDeviceCount(&deviceCount);
+
+    if (error != cudaSuccess || deviceCount == 0) {
+        std::cerr << "Ошибка: NVIDIA GPU не найдена или драйверы не установлены! " 
+                  << cudaGetErrorString(error) << "\n";
+        return 1;
+    }
+
+    // Принудительно выбираем первую подходящую карту
+    cudaSetDevice(1); 
+
+    cudaDeviceProp prop;
+    cudaGetDeviceProperties(&prop, 0);
+    std::cout << "Запуск на устройстве: " << prop.name << std::endl;
     int N;
     std::cout << "Enter N (e.g., 10000 / 100000 / 1000000): ";
     std::cin >> N;
