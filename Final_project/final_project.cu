@@ -1,4 +1,3 @@
-// main.cu
 // Build: nvcc -O3 -std=c++17 main.cu -o gpu_pipeline
 // Run example:
 //   ./gpu_pipeline --n_mb 512 --chunk_mb 32 --streams 4 --iters 5
